@@ -19,18 +19,9 @@
     z-index: 1000;
 }
 
-.left-section {
-    margin-left: 20px;
-}
-
-.left-section a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: black;
-}
-
 .nav-links {
     display: flex;
+    margin-left: 20px;
 }
 
 .nav-links a {
@@ -43,17 +34,27 @@
     text-decoration: underline;
 }
 
-/* Sticky Side Menu */
+.right-section {
+    margin-right: 20px;
+}
+
+.right-section a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Sticky Left Side Menu */
 .side-menu {
     position: sticky;
     top: 60px; /* Adjust based on navbar height */
     width: 200px;
     background-color: #f8f8f8;
-    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     padding: 15px;
     height: calc(100vh - 60px);
-    float: right;
-    margin-right: 20px;
+    float: left;
+    margin-left: 20px;
 }
 
 .side-menu h3 {
@@ -86,7 +87,7 @@
 
 /* Main Content */
 main {
-    margin-left: 20px;
-    margin-right: 220px; /* Account for the side menu */
+    margin-left: 240px; /* Adjusted for the side menu */
+    margin-right: 20px; /* Space on the right for the content */
     padding: 20px;
 }
