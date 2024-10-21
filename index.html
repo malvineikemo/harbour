@@ -3,25 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harbour | Home</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Harbour</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Harbour</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
 
-    <script src="assets/js/script.js"></script>
+    <!-- Top Navbar -->
+    <header class="top-nav">
+        <div class="left-section">
+            <a href="#login">Login</a> / 
+            <a href="#signup">Sign Up</a> | 
+            <a href="#account">Account</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Right Sidebar -->
+    <aside class="side-menu">
+        <h3>Categories</h3>
+        <ul>
+            <li>Category 1
+                <ul>
+                    <li>Subcategory 1.1</li>
+                    <li>Subcategory 1.2</li>
+                </ul>
+            </li>
+            <li>Category 2
+                <ul>
+                    <li>Subcategory 2.1</li>
+                    <li>Subcategory 2.2</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="motd">
+            <p><strong>MOTD:</strong> Welcome to our site! Have a great day!</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to The Harbour</h1>
+        <p>This is the main content area. The navbar and the side menu will stay sticky as you scroll.</p>
+    </main>
+
 </body>
 </html>
