@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; /* Background color for the body */
     color: #333; /* Default text color */
+    display: flex; /* Use flexbox for the layout */
   }
   
   /* Navbar styles */
@@ -15,16 +16,10 @@ body {
     background-color: #ffffff; /* Background color for navbar */
     border-bottom: 1px solid #ddd; /* Border at the bottom of navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle 3D effect */
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px; /* Space between links */
-  }
-  
-  .account-section {
-    display: flex;
-    gap: 15px; /* Space between account links */
+    width: 100%; /* Full width for navbar */
+    position: fixed; /* Fix navbar at the top */
+    top: 0; /* Align with the top */
+    z-index: 1000; /* Ensure navbar is above other content */
   }
   
   /* Sidebar styles */
@@ -33,8 +28,13 @@ body {
     background-color: #ffffff; /* Background color for sidebar */
     padding: 20px; /* Padding for sidebar content */
     border-right: 1px solid #ddd; /* Border on the right */
+    position: fixed; /* Fix sidebar on the left */
+    top: 60px; /* Adjust to start below the navbar (60px for example) */
+    bottom: 0; /* Stretch to the bottom of the viewport */
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
   
+  /* Sidebar link styles */
   .sidebar a {
     display: block; /* Make sidebar links block-level for better spacing */
     margin-bottom: 15px; /* Space between sidebar links */
@@ -50,6 +50,8 @@ body {
   .main-content {
     padding: 20px; /* Padding for main content area */
     margin-left: 270px; /* Leave space for the sidebar */
+    margin-top: 60px; /* Leave space for the navbar */
+    flex-grow: 1; /* Allow main content to grow */
   }
   
   /* Responsive styles */
@@ -58,8 +60,17 @@ body {
       flex-direction: column; /* Stack items in navbar on smaller screens */
     }
   
+    .sidebar {
+      position: static; /* Make sidebar static for smaller screens */
+      width: auto; /* Reset width for smaller screens */
+      top: 0; /* Reset top for smaller screens */
+      bottom: auto; /* Reset bottom for smaller screens */
+      margin-top: 60px; /* Leave space for the navbar */
+    }
+  
     .main-content {
       margin-left: 0; /* Reset margin for mobile */
+      margin-top: 60px; /* Leave space for the navbar */
     }
   }
   
