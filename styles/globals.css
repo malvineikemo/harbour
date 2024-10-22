@@ -1,58 +1,65 @@
-/* Basic reset */
-* {
+/* General body and layout styles */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Top Navbar Styles */
-.top-nav {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Background color for the body */
+    color: #333; /* Default text color */
+  }
+  
+  /* Navbar styles */
+  .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    z-index: 1000;
-}
-
-.nav-links {
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Padding for top/bottom and left/right */
+    background-color: #ffffff; /* Background color for navbar */
+    border-bottom: 1px solid #ddd; /* Border at the bottom of navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle 3D effect */
+  }
+  
+  .nav-links {
     display: flex;
-    margin-left: 20px;
-}
-
-.nav-links a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.right-section {
-    margin-right: 20px;
-}
-
-/* Sticky Left Side Menu */
-.side-menu {
-    position: sticky;
-    top: 60px;
-    width: 200px;
-    background-color: #f8f8f8;
-    border-right: 1px solid #ccc;
-    padding: 15px;
-    height: calc(100vh - 60px);
-    float: left;
-    margin-left: 20px;
-}
-
-.layout {
+    gap: 20px; /* Space between links */
+  }
+  
+  .account-section {
     display: flex;
-}
-
-main {
-    margin-left: 240px;
-    margin-right: 20px;
-    padding: 20px;
-}
+    gap: 15px; /* Space between account links */
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px; /* Width of the sidebar */
+    background-color: #ffffff; /* Background color for sidebar */
+    padding: 20px; /* Padding for sidebar content */
+    border-right: 1px solid #ddd; /* Border on the right */
+  }
+  
+  .sidebar a {
+    display: block; /* Make sidebar links block-level for better spacing */
+    margin-bottom: 15px; /* Space between sidebar links */
+    color: #333; /* Default link color */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline; /* Underline on hover for sidebar links */
+  }
+  
+  /* Main content styles */
+  .main-content {
+    padding: 20px; /* Padding for main content area */
+    margin-left: 270px; /* Leave space for the sidebar */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack items in navbar on smaller screens */
+    }
+  
+    .main-content {
+      margin-left: 0; /* Reset margin for mobile */
+    }
+  }
+  
