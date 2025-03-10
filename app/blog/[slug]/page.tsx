@@ -9,12 +9,6 @@ interface BlogPostParams {
   slug: string
 }
 
-interface FrontMatter {
-  title: string
-  date?: string
-  description?: string
-}
-
 interface BlogPostProps {
   params: BlogPostParams
 }
