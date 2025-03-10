@@ -7,13 +7,12 @@ import rehypeHighlight from "rehype-highlight"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { notFound } from "next/navigation"
+import { PageProps } from "next" // ✅ Import Next.js PageProps
 
-const components = {
-  // You can define custom components here if needed
-}
+const components = {}
 
 async function getPostContent(slug: string) {
-  const filePath = path.join(process.cwd(), "posts", `${slug}.mdx`) // ✅ Fixed template string
+  const filePath = path.join(process.cwd(), "posts", `${slug}.mdx`)
 
   try {
     const fileContent = fs.readFileSync(filePath, "utf8")
@@ -30,11 +29,8 @@ async function getPostContent(slug: string) {
       scope: data,
     })
 
-    return {
-      mdxSource,
-      frontMatter: data,
-    }
-  } catch (e: unknown) { // ✅ Changed `any` to `unknown`
+    return { mdxSource, frontMatter: data }
+  } catch (e: unknown) {
     if (e instanceof Error) {
       console.error(`Error reading or processing post ${slug}:`, e.message)
     } else {
@@ -53,7 +49,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+// ✅ Use PageProps<{ slug: string }> for correct typing
+export default async function BlogPost({ params }: PageProps<{ slug: string }>) {
   const { slug } = params
   const post = await getPostContent(slug)
 
@@ -78,9 +75,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = await getPostContent(slug)
 
   if (!post) {
-    return {
-      title: "Not Found",
-    }
+    return { title: "Not Found" }
   }
 
   return {
