@@ -1,287 +1,276 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, Download } from "lucide-react"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Download, Github, FileDown, ExternalLink, Info } from "lucide-react"
+import Image from "next/image"
 
-export default function IW4xGuidePage() {
+export default function IW4xPage() {
   return (
     <div className="container mx-auto max-w-4xl py-12">
-      <Button variant="ghost" size="sm" className="mb-6" asChild>
-        <Link href="/clients/iw4x">
-          <ChevronLeft className="mr-2 h-4 w-4" />
-          Back to IW4x
-        </Link>
-      </Button>
-
-      <div className="mb-8">
-        <h1 className="mb-2 text-4xl font-bold tracking-tighter">IW4x Installation Guide</h1>
-        <p className="text-gray-400">Complete instructions for installing and using the IW4x client</p>
-      </div>
-
-      <div className="prose prose-invert max-w-none">
-        <Alert className="bg-blue-900/30 border-blue-800 mb-8">
-          <AlertTitle className="text-blue-300">Prerequisites</AlertTitle>
-          <AlertDescription>
-            <p className="mt-2 text-gray-200">Before installing IW4x, you'll need:</p>
-            <ul className="mt-2 text-gray-200">
-              <li>A legitimate copy of Call of Duty: Modern Warfare 2 (2009)</li>
-              <li>At least 16GB of free disk space</li>
-              <li>Administrator privileges on your computer</li>
-              <li>An internet connection for multiplayer features</li>
-            </ul>
-          </AlertDescription>
-        </Alert>
-
-        <h2>Installation Methods</h2>
-        <p>There are several ways to install IW4x. Choose the method that works best for you:</p>
-
-        <h3>Method 1: Full Client Installation</h3>
-        <ol>
-          <li>
-            <p>
-              <strong>Download the Full Client:</strong>
-            </p>
-            <p>
-              Download the latest IW4x full client package from our{" "}
-              <Link href="/clients/iw4x#download" className="text-blue-400 hover:underline">
-                downloads page
-              </Link>
-              .
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Extract the Files:</strong>
-            </p>
-            <p>
-              Extract the ZIP file to a location of your choice (e.g., <code>C:\Games\IW4x</code>).
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Copy Game Files:</strong>
-            </p>
-            <p>Copy the following files from your Modern Warfare 2 installation to the IW4x folder:</p>
-            <ul>
-              <li>
-                All <code>.iwd</code> files from the <code>main</code> folder
-              </li>
-              <li>
-                <code>localization.txt</code> from the <code>main</code> folder
-              </li>
-              <li>
-                <code>miles*.dll</code> files from the root folder
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              <strong>Run the Client:</strong>
-            </p>
-            <p>
-              Run <code>iw4x.exe</code> as administrator.
-            </p>
-          </li>
-        </ol>
-
-        <h3>Method 2: Installing with Steam Version</h3>
-        <ol>
-          <li>
-            <p>
-              <strong>Install Base Game:</strong>
-            </p>
-            <p>Install Call of Duty: Modern Warfare 2 from Steam.</p>
-          </li>
-          <li>
-            <p>
-              <strong>Download the Update Package:</strong>
-            </p>
-            <p>
-              Download the latest IW4x update package from our{" "}
-              <Link href="/clients/iw4x#download" className="text-blue-400 hover:underline">
-                downloads page
-              </Link>
-              .
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Extract to Game Directory:</strong>
-            </p>
-            <p>
-              Extract the update files directly to your Modern Warfare 2 installation directory (typically{" "}
-              <code>C:\Program Files (x86)\Steam\steamapps\common\Call of Duty Modern Warfare 2</code>).
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Run the Client:</strong>
-            </p>
-            <p>
-              Run <code>iw4x.exe</code> instead of the original game launcher.
-            </p>
-          </li>
-        </ol>
-
-        <h3>Method 3: Torrent Installation</h3>
-        <ol>
-          <li>
-            <p>
-              <strong>Download Torrent File:</strong>
-            </p>
-            <p>
-              Download the torrent file for the latest IW4x version from our{" "}
-              <Link href="/clients/iw4x#download" className="text-blue-400 hover:underline">
-                downloads page
-              </Link>
-              .
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Open in BitTorrent Client:</strong>
-            </p>
-            <p>
-              Open the torrent file with a BitTorrent client like{" "}
-              <a
-                href="https://www.qbittorrent.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
-              >
-                qBittorrent
-              </a>
-              .
-            </p>
-          </li>
-          <li>
-            <p>
-              <strong>Complete Download:</strong>
-            </p>
-            <p>Wait for the download to complete.</p>
-          </li>
-          <li>
-            <p>
-              <strong>Run the Client:</strong>
-            </p>
-            <p>
-              Once downloaded, navigate to the download location and run <code>iw4x.exe</code>.
-            </p>
-          </li>
-        </ol>
-
-        <h2>Troubleshooting</h2>
-
-        <h3>Common Issues</h3>
-
-        <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
-          <h4 className="font-bold">Game Crashes on Startup</h4>
-          <ul>
-            <li>Run the game as administrator</li>
-            <li>Verify you have all required game files</li>
-            <li>Make sure your graphics drivers are up to date</li>
-            <li>Check that you have the required Visual C++ Redistributables installed</li>
-            <li>Disable any overlays (Discord, Steam, etc.)</li>
-          </ul>
+      <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 className="text-4xl font-bold tracking-tighter">IW4x Client</h1>
+          <p className="text-xl text-gray-400">Call of Duty: Modern Warfare 2 (2009)</p>
         </div>
-
-        <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
-          <h4 className="font-bold">Can't Connect to Servers</h4>
-          <ul>
-            <li>Check your internet connection</li>
-            <li>Make sure your firewall isn't blocking the game</li>
-            <li>Verify you're using the latest version of IW4x</li>
-            <li>Try restarting your router</li>
-            <li>Check if the server you're trying to join is online</li>
-          </ul>
-        </div>
-
-        <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
-          <h4 className="font-bold">Missing Game Files</h4>
-          <ul>
-            <li>Ensure you've copied all required files from your base game</li>
-            <li>Verify your download isn't corrupted by checking file integrity</li>
-            <li>Try downloading the full client package instead of the update</li>
-          </ul>
-        </div>
-
-        <h2>Playing the Game</h2>
-
-        <h3>Finding Servers</h3>
-        <p>IW4x includes a built-in server browser. To find and join a server:</p>
-        <ol>
-          <li>Launch IW4x</li>
-          <li>Click on "Multiplayer"</li>
-          <li>Select "Server Browser"</li>
-          <li>Browse the list of available servers</li>
-          <li>Click on a server to join</li>
-        </ol>
-        <p>You can filter servers by game mode, map, player count, and ping.</p>
-
-        <h3>Hosting a Server</h3>
-        <p>To host your own server:</p>
-        <ol>
-          <li>Launch IW4x</li>
-          <li>Click on "Multiplayer"</li>
-          <li>Select "Create Server"</li>
-          <li>Configure your server settings</li>
-          <li>Click "Start Server"</li>
-        </ol>
-        <p>
-          For dedicated server setup, please refer to our{" "}
-          <a
-            href="https://github.com/harbourproductions/iw4x/wiki/Dedicated-Server-Setup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:underline"
-          >
-            dedicated server guide
-          </a>
-          .
-        </p>
-
-        <h3>Using Console Commands</h3>
-        <p>IW4x provides access to the developer console, which allows you to use various commands:</p>
-        <ol>
-          <li>Press the tilde key (~) to open the console</li>
-          <li>Type commands to modify game settings or behavior</li>
-        </ol>
-        <p>Some useful commands include:</p>
-        <ul>
-          <li>
-            <code>connect [IP:PORT]</code> - Connect to a specific server
-          </li>
-          <li>
-            <code>map [mapname]</code> - Load a specific map
-          </li>
-          <li>
-            <code>cg_fov [value]</code> - Change your field of view (default: 65)
-          </li>
-          <li>
-            <code>com_maxfps [value]</code> - Set maximum FPS
-          </li>
-        </ul>
-
-        <h2>Getting Help</h2>
-        <p>If you encounter any issues not covered in this guide, you can get help through:</p>
-        <ul>
-          <li>Our Discord community</li>
-          <li>The GitHub issues page</li>
-          <li>Community forums</li>
-        </ul>
-
-        <div className="flex flex-col md:flex-row gap-4 mt-8">
-          <Button asChild size="lg" className="md:flex-1">
-            <Link href="/clients/iw4x">
-              <ChevronLeft className="mr-2 h-5 w-5" />
-              Back to IW4x
+        <div className="flex gap-2">
+          <Button asChild>
+            <a href="#download">
+              <Download className="mr-2 h-4 w-4" />
+              Download
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/clients/iw4x/guide">
+              <Info className="mr-2 h-4 w-4" />
+              Installation Guide
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="md:flex-1">
-            <Link href="/clients/iw4x#download">
-              <Download className="mr-2 h-5 w-5" />
-              Download IW4x
-            </Link>
+        </div>
+      </div>
+
+      <div className="aspect-video w-full overflow-hidden rounded-lg mb-8">
+        <Image
+          src="/placeholder.svg?height=400&width=800"
+          alt="IW4x screenshot"
+          width={800}
+          height={400}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="prose prose-invert max-w-none mb-12">
+        <h2>About IW4x</h2>
+        <p>
+          IW4x is an enhanced client for Call of Duty: Modern Warfare 2, offering dedicated servers, improved security,
+          and additional features not found in the original game. Our client allows you to play on community-hosted
+          servers with enhanced stability and performance.
+        </p>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>
+            <strong>Dedicated Servers</strong> - Play on community-hosted servers
+          </li>
+          <li>
+            <strong>Server Browser</strong> - Find and filter available servers
+          </li>
+          <li>
+            <strong>Extended Mod Support</strong> - Play and create custom content
+          </li>
+          <li>
+            <strong>Console Unlocker</strong> - Access to developer console for advanced configuration
+          </li>
+          <li>
+            <strong>FOV Slider</strong> - Adjust your field of view for better visibility
+          </li>
+          <li>
+            <strong>FPS Unlocker</strong> - Remove the 91 FPS cap
+          </li>
+          <li>
+            <strong>Theater Mode</strong> - Record and watch gameplay
+          </li>
+          <li>
+            <strong>Enhanced Security</strong> - Improved protection against common exploits
+          </li>
+        </ul>
+
+        <h3>System Requirements</h3>
+        <ul>
+          <li>
+            <strong>OS:</strong> Windows 7/8/10/11 (64-bit recommended)
+          </li>
+          <li>
+            <strong>CPU:</strong> Intel Core 2 Duo E4600 or AMD Phenom X3 8750
+          </li>
+          <li>
+            <strong>RAM:</strong> 4GB
+          </li>
+          <li>
+            <strong>GPU:</strong> NVIDIA GeForce 8600GT or ATI Radeon HD 2600XT
+          </li>
+          <li>
+            <strong>Storage:</strong> 16GB available space
+          </li>
+          <li>
+            <strong>Internet:</strong> Broadband connection
+          </li>
+        </ul>
+
+        <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+          <p className="text-yellow-300 font-semibold">Important Note:</p>
+          <p>
+            IW4x requires a legitimate copy of Call of Duty: Modern Warfare 2. Our client does not include the base game
+            files, which must be obtained separately through legal means such as Steam or a physical copy.
+          </p>
+        </div>
+      </div>
+
+      <div id="download" className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Download IW4x</h2>
+
+        <Tabs defaultValue="full">
+          <TabsList className="mb-4">
+            <TabsTrigger value="full">Full Client</TabsTrigger>
+            <TabsTrigger value="update">Update Only</TabsTrigger>
+            <TabsTrigger value="torrent">Torrent</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="full">
+            <Card className="bg-gray-900 border-gray-800">
+              <CardHeader>
+                <CardTitle>IW4x Full Client</CardTitle>
+                <CardDescription>
+                  Complete package including the client and all necessary files (does not include base game)
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between py-2 border-b border-gray-800">
+                  <div>
+                    <p className="font-medium">IW4x-Full.zip</p>
+                    <p className="text-sm text-gray-400">Latest Version | 250MB</p>
+                  </div>
+                  <Button asChild>
+                    <a href="https://github.com/harbourproductions/iw4x/releases/latest/download/IW4x-Full.zip">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <p className="text-sm text-gray-400">Includes client and required files</p>
+                <Button variant="ghost" size="sm" asChild>
+                  <a
+                    href="https://github.com/harbourproductions/iw4x/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    All Releases
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="update">
+            <Card className="bg-gray-900 border-gray-800">
+              <CardHeader>
+                <CardTitle>IW4x Update Only</CardTitle>
+                <CardDescription>Update files only for existing installations</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between py-2 border-b border-gray-800">
+                  <div>
+                    <p className="font-medium">IW4x-Update.zip</p>
+                    <p className="text-sm text-gray-400">Latest Version | 50MB</p>
+                  </div>
+                  <Button asChild>
+                    <a href="https://github.com/harbourproductions/iw4x/releases/latest/download/IW4x-Update.zip">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <p className="text-sm text-gray-400">Only includes updated client files</p>
+                <Button variant="ghost" size="sm" asChild>
+                  <a
+                    href="https://github.com/harbourproductions/iw4x/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    All Releases
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="torrent">
+            <Card className="bg-gray-900 border-gray-800">
+              <CardHeader>
+                <CardTitle>IW4x Torrent Downloads</CardTitle>
+                <CardDescription>Torrent files for peer-to-peer downloading</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between py-2 border-b border-gray-800">
+                  <div>
+                    <p className="font-medium">IW4x-Full.torrent</p>
+                    <p className="text-sm text-gray-400">Latest Version | 250MB</p>
+                  </div>
+                  <Button asChild>
+                    <a href="https://github.com/harbourproductions/iw4x/releases/latest/download/IW4x-Full.torrent">
+                      <FileDown className="mr-2 h-4 w-4" />
+                      Download Torrent
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <p className="text-sm text-gray-400">
+                  You&apos;ll need a BitTorrent client like{" "}
+                  <a
+                    href="https://www.qbittorrent.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:underline"
+                  >
+                    qBittorrent
+                  </a>{" "}
+                  to download these files.
+                </p>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6 mb-12">
+        <Button asChild size="lg" className="md:flex-1">
+          <Link href="/clients/iw4x/guide">
+            <Info className="mr-2 h-5 w-5" />
+            Installation Guide
+          </Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="md:flex-1">
+          <a href="https://github.com/harbourproductions/iw4x" target="_blank" rel="noopener noreferrer">
+            <Github className="mr-2 h-5 w-5" />
+            Source Code
+          </a>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="md:flex-1">
+          <Link href="/clients">
+            <ExternalLink className="mr-2 h-5 w-5" />
+            All Clients
+          </Link>
+        </Button>
+      </div>
+
+      <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <h3 className="text-xl font-bold mb-4">Latest Changes</h3>
+        <ul className="space-y-2 text-gray-300">
+          <li>• Improved server browser performance</li>
+          <li>• Fixed various stability issues</li>
+          <li>• Added support for additional mods</li>
+          <li>• Enhanced security features</li>
+          <li>• Improved compatibility with Windows 11</li>
+          <li>• Fixed issues with certain graphics cards</li>
+          <li>• Added support for ultrawide resolutions</li>
+          <li>• Various bug fixes and performance improvements</li>
+        </ul>
+        <div className="mt-4">
+          <Button variant="ghost" size="sm" asChild>
+            <a
+              href="https://github.com/harbourproductions/iw4x/blob/main/CHANGELOG.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Full Changelog
+            </a>
           </Button>
         </div>
       </div>

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Download, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 const clients = [
   {
@@ -75,9 +76,11 @@ export default function ClientsPage() {
         {clients.map((client) => (
           <Card key={client.id} className="overflow-hidden bg-gray-900 border-gray-800 flex flex-col">
             <div className="aspect-video w-full overflow-hidden">
-              <img
+              <Image
                 src={client.image || "/placeholder.svg"}
                 alt={`${client.title} screenshot`}
+                width={350}
+                height={200}
                 className="w-full h-full object-cover"
               />
             </div>

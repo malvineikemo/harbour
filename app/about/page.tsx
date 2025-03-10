@@ -9,7 +9,8 @@ export default function AboutPage() {
 
       <div className="prose prose-invert max-w-none">
         <p className="lead text-gray-200 text-lg">
-          We're a team focused on enhancing and maintaining Call of Duty clients with modern features and improvements.
+          We&apos;re a team focused on enhancing and maintaining Call of Duty clients with modern features and
+          improvements.
         </p>
 
         <p>
@@ -60,8 +61,8 @@ export default function AboutPage() {
 
         <h2>Community-Driven Development</h2>
         <p>
-          Our development process is community-driven, with regular updates based on player feedback and needs. We're
-          committed to transparency and collaboration in all our projects.
+          Our development process is community-driven, with regular updates based on player feedback and needs.
+          We&apos;re committed to transparency and collaboration in all our projects.
         </p>
 
         <div className="my-8 flex justify-center">
@@ -81,8 +82,8 @@ export default function AboutPage() {
 
         <h2>Join Us</h2>
         <p>
-          We're always looking for passionate contributors to help improve our clients. If you're interested in
-          contributing, check out our GitHub repositories or join our Discord community.
+          We&apos;re always looking for passionate contributors to help improve our clients. If you&apos;re interested
+          in contributing, check out our GitHub repositories or join our Discord community.
         </p>
 
         <div className="mt-8 flex justify-center gap-4">

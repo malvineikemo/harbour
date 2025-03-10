@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Download, Github, FileDown, ExternalLink, Info } from "lucide-react"
+import Image from "next/image"
 
 export default function IW6xPage() {
   return (
@@ -29,7 +30,13 @@ export default function IW6xPage() {
       </div>
 
       <div className="aspect-video w-full overflow-hidden rounded-lg mb-8">
-        <img src="/placeholder.svg?height=400&width=800" alt="IW6x screenshot" className="w-full h-full object-cover" />
+        <Image
+          src="/placeholder.svg?height=400&width=800"
+          alt="IW6x screenshot"
+          width={800}
+          height={400}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="prose prose-invert max-w-none mb-12">

@@ -12,11 +12,11 @@ export default function LicensePage() {
           <br />
           <p>1. DEFINITIONS</p>
           <p>
-            "Software" refers to the computer programs, code, and related documentation made available under this
-            License by Harbour.
+            &quot;Software&quot; refers to the computer programs, code, and related documentation made available under
+            this License by Harbour.
           </p>
-          <p>"Derivative Works" means any work that is based on or derived from the Software.</p>
-          <p>"You" means the individual or entity exercising the rights under this License.</p>
+          <p>&quot;Derivative Works&quot; means any work that is based on or derived from the Software.</p>
+          <p>&quot;You&quot; means the individual or entity exercising the rights under this License.</p>
           <br />
           <p>2. GRANT OF RIGHTS</p>
           <p>
@@ -62,10 +62,10 @@ export default function LicensePage() {
           <br />
           <p>7. DISCLAIMER OF WARRANTY</p>
           <p>
-            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
-            HARBOUR MAKES NO WARRANTY THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE
-            SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.
+            THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+            NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+            NON-INFRINGEMENT. HARBOUR MAKES NO WARRANTY THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT THE
+            OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.
           </p>
           <br />
           <p>8. LIMITATION OF LIABILITY</p>
@@ -120,7 +120,7 @@ export default function LicensePage() {
 
         <h3>Why This License?</h3>
         <p>
-          We've chosen this license to protect our intellectual property and ensure that our software is used as
+          We&apos;ve chosen this license to protect our intellectual property and ensure that our software is used as
           intended. This allows us to maintain control over our code while still making it available for personal use.
         </p>
 

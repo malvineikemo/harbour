@@ -22,7 +22,7 @@ export default function IW6xGuidePage() {
         <Alert className="bg-blue-900/30 border-blue-800 mb-8">
           <AlertTitle className="text-blue-300">Prerequisites</AlertTitle>
           <AlertDescription>
-            <p className="mt-2 text-gray-200">Before installing IW6x, you'll need:</p>
+            <p className="mt-2 text-gray-200">Before installing IW6x, you&apos;ll need:</p>
             <ul className="mt-2 text-gray-200">
               <li>A legitimate copy of Call of Duty: Ghosts (2013)</li>
               <li>At least 40GB of free disk space</li>
@@ -186,7 +186,7 @@ export default function IW6xGuidePage() {
         </div>
 
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
-          <h4 className="font-bold">Can't Connect to Friends</h4>
+          <h4 className="font-bold">Can&apos;t Connect to Friends</h4>
           <ul>
             <li>Ensure both you and your friend are using the same version of IW6x</li>
             <li>Check your firewall settings and make sure IW6x is allowed</li>
@@ -198,8 +198,8 @@ export default function IW6xGuidePage() {
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
           <h4 className="font-bold">Missing Game Files</h4>
           <ul>
-            <li>Ensure you've copied all required files from your base game</li>
-            <li>Verify your download isn't corrupted by checking file integrity</li>
+            <li>Ensure you&apos;ve copied all required files from your base game</li>
+            <li>Verify your download isn&apos;t corrupted by checking file integrity</li>
             <li>Try downloading the full client package instead of the update</li>
           </ul>
         </div>
@@ -210,9 +210,9 @@ export default function IW6xGuidePage() {
         <p>To play on LAN with friends:</p>
         <ol>
           <li>Launch IW6x</li>
-          <li>Click on "Multiplayer"</li>
-          <li>Select "Create Game" to host, or "Join Game" to join a friend's game</li>
-          <li>If joining, you'll need to enter your friend's IP address</li>
+          <li>Click on &quot;Multiplayer&quot;</li>
+          <li>Select &quot;Create Game&quot; to host, or &quot;Join Game&quot; to join a friend&apos;s game</li>
+          <li>If joining, you&apos;ll need to enter your friend&apos;s IP address</li>
         </ol>
 
         <h3>Using Console Commands</h3>
@@ -221,7 +221,7 @@ export default function IW6xGuidePage() {
           <li>Press the tilde key (~) to open the console</li>
           <li>Type commands to modify game settings or behavior</li>
         </ol>
-        <p>Some useful commands include:</p>
+        <p>Here are some useful commands:</p>
         <ul>
           <li>
             <code>connect [IP:PORT]</code> - Connect to a specific server
@@ -241,7 +241,7 @@ export default function IW6xGuidePage() {
         <p>To adjust your field of view:</p>
         <ol>
           <li>Launch IW6x</li>
-          <li>Go to "Options" > "Video"</li>
+          <li>Go to &quot;Options&quot; &gt; &quot;Video&quot;</li>
           <li>Use the FOV slider to adjust to your preference</li>
           <li>
             Alternatively, use the console command <code>cg_fov [value]</code>

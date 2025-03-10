@@ -8,9 +8,10 @@ export default function TermsOfServicePage() {
 
         <h2>1. Introduction</h2>
         <p>
-          Welcome to Harbour ("we," "our," or "us"), a part of Eikemo Developments. These Terms of Service ("Terms")
-          govern your access to and use of the Harbour website and services, including any content, functionality, and
-          services offered on or through the website (the "Service").
+          Welcome to Harbour (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a part of Eikemo Developments. These
+          Terms of Service (&quot;Terms&quot;) govern your access to and use of the Harbour website and services,
+          including any content, functionality, and services offered on or through the website (the
+          &quot;Service&quot;).
         </p>
         <p>
           Please read these Terms carefully before you start to use the Service. By using the Service, you accept and
@@ -64,8 +65,8 @@ export default function TermsOfServicePage() {
           <li>In any way that violates any applicable federal, state, local, or international law or regulation.</li>
           <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way.</li>
           <li>
-            To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail,"
-            "chain letter," "spam," or any other similar solicitation.
+            To transmit, or procure the sending of, any advertising or promotional material, including any &quot;junk
+            mail,&quot; &quot;chain letter,&quot; &quot;spam,&quot; or any other similar solicitation.
           </li>
           <li>
             To impersonate or attempt to impersonate us, our employees, another user, or any other person or entity.
@@ -85,9 +86,10 @@ export default function TermsOfServicePage() {
 
         <h2>8. Disclaimer of Warranties</h2>
         <p>
-          THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER
-          EXPRESS OR IMPLIED. NEITHER WE NOR ANY PERSON ASSOCIATED WITH US MAKES ANY WARRANTY OR REPRESENTATION WITH
-          RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE SERVICE.
+          THE SERVICE IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS, WITHOUT ANY WARRANTIES OF
+          ANY KIND, EITHER EXPRESS OR IMPLIED. NEITHER WE NOR ANY PERSON ASSOCIATED WITH US MAKES ANY WARRANTY OR
+          REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF
+          THE SERVICE.
         </p>
 
         <h2>9. Limitation of Liability</h2>

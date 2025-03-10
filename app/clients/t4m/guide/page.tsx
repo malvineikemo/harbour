@@ -22,7 +22,7 @@ export default function T4MGuidePage() {
         <Alert className="bg-blue-900/30 border-blue-800 mb-8">
           <AlertTitle className="text-blue-300">Prerequisites</AlertTitle>
           <AlertDescription>
-            <p className="mt-2 text-gray-200">Before installing T4M, you'll need:</p>
+            <p className="mt-2 text-gray-200">Before installing T4M, you&apos;ll need:</p>
             <ul className="mt-2 text-gray-200">
               <li>A legitimate copy of Call of Duty: World at War (2008)</li>
               <li>At least 8GB of free disk space</li>
@@ -186,21 +186,21 @@ export default function T4MGuidePage() {
         </div>
 
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
-          <h4 className="font-bold">Can't Connect to Servers</h4>
+          <h4 className="font-bold">Can&apos;t Connect to Servers</h4>
           <ul>
             <li>Check your internet connection</li>
-            <li>Make sure your firewall isn't blocking the game</li>
-            <li>Verify you're using the latest version of T4M</li>
+            <li>Make sure your firewall isn&apos;t blocking the game</li>
+            <li>Verify you&apos;re using the latest version of T4M</li>
             <li>Try restarting your router</li>
-            <li>Check if the server you're trying to join is online</li>
+            <li>Check if the server you&apos;re trying to join is online</li>
           </ul>
         </div>
 
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mb-4">
           <h4 className="font-bold">Missing Game Files</h4>
           <ul>
-            <li>Ensure you've copied all required files from your base game</li>
-            <li>Verify your download isn't corrupted by checking file integrity</li>
+            <li>Ensure you&apos;ve copied all required files from your base game</li>
+            <li>Verify your download isn&apos;t corrupted by checking file integrity</li>
             <li>Try downloading the full client package instead of the update</li>
           </ul>
         </div>
@@ -211,8 +211,8 @@ export default function T4MGuidePage() {
         <p>T4M includes a built-in server browser. To find and join a server:</p>
         <ol>
           <li>Launch T4M</li>
-          <li>Click on "Multiplayer"</li>
-          <li>Select "Server Browser"</li>
+          <li>Click on &quot;Multiplayer&quot;</li>
+          <li>Select &quot;Server Browser&quot;</li>
           <li>Browse the list of available servers</li>
           <li>Click on a server to join</li>
         </ol>
@@ -248,7 +248,7 @@ export default function T4MGuidePage() {
             Place them in the <code>mods</code> folder in your T4M directory
           </li>
           <li>Launch T4M</li>
-          <li>Click on "Mods" in the main menu</li>
+          <li>Click on &quot;Mods&quot; in the main menu</li>
           <li>Select the custom map you want to play</li>
         </ol>
 

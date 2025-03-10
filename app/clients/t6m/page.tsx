@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Download, Github, ExternalLink, Info } from "lucide-react"
+import Image from "next/image"
 
 export default function T6MPage() {
   return (
@@ -28,7 +29,13 @@ export default function T6MPage() {
       </div>
 
       <div className="aspect-video w-full overflow-hidden rounded-lg mb-8">
-        <img src="/placeholder.svg?height=400&width=800" alt="T6M screenshot" className="w-full h-full object-cover" />
+        <Image
+          src="/placeholder.svg?height=400&width=800"
+          alt="T6M screenshot"
+          width={800}
+          height={400}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="prose prose-invert max-w-none mb-12">
@@ -92,7 +99,7 @@ export default function T6MPage() {
         <div className="bg-purple-900/30 border-purple-800 p-4 rounded-lg border">
           <p className="text-purple-300 font-semibold">Development Status:</p>
           <p className="text-gray-200">
-            T6M is currently in early development. The client is not yet ready for general use, but we're making
+            T6M is currently in early development. The client is not yet ready for general use, but we&apos;re making
             progress and will release early builds for testing soon. Follow our GitHub repository for updates on
             development progress.
           </p>
@@ -117,9 +124,9 @@ export default function T6MPage() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-300 py-6">
-              T6M is currently in early development and not yet ready for public testing. We're working hard to bring
-              you an enhanced Black Ops II experience. Follow our GitHub repository for updates on development progress
-              and to be notified when early builds become available.
+              T6M is currently in early development and not yet ready for public testing. We&apos;re working hard to
+              bring you an enhanced Black Ops II experience. Follow our GitHub repository for updates on development
+              progress and to be notified when early builds become available.
             </p>
           </CardContent>
           <CardFooter>
