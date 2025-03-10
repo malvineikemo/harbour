@@ -1,101 +1,87 @@
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { MDXRemote } from "next-mdx-remote"
+import { serialize } from "next-mdx-remote/serialize"
+import rehypeHighlight from "rehype-highlight"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft } from 'lucide-react'
 
-// In a real application, this would come from a database or file system
-const posts = {
-  "getting-started": {
-    title: "Getting Started with Harbour",
-    date: "March 7, 2025",
-    content: `
-# Getting Started with Harbour
-
-Welcome to Harbour! This guide will help you get started with using Harbour for your content needs.
-
-## Installation
-
-To install Harbour, you'll need to have Node.js and npm installed on your machine. Once you have those, you can run the following command:
-
-\`\`\`bash
-npx create-next-app@latest my-harbour-site --example https://github.com/harbour/starter
-\`\`\`
-
-## Configuration
-
-After installation, you'll need to configure your site. Open the \`harbour.config.js\` file and update the following:
-
-\`\`\`js
-module.exports = {
-  siteName: 'My Awesome Site',
-  description: 'A site built with Harbour',
-  // other configuration options
+const components = {
+  // You can define custom components here if needed
 }
-\`\`\`
 
-## Creating Content
+async function getPostContent(slug: string) {
+  const filePath = path.join(process.cwd(), "posts", `${slug}.mdx`)
 
-Harbour uses Markdown for content. To create a new post, add a new \`.md\` or \`.mdx\` file to the \`content\` directory:
+  try {
+    const fileContent = fs.readFileSync(filePath, "utf8")
+    const { data, content } = matter(fileContent)
 
-\`\`\`md
----
-title: My First Post
-date: 2025-03-07
----
+    if (data.published === false) {
+      return null
+    }
 
-This is my first post on Harbour!
-\`\`\`
+    const mdxSource = await serialize(content, {
+      mdxOptions: {
+        rehypePlugins: [rehypeHighlight, rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
+      },
+      scope: data,
+    })
 
-## Deployment
+    return {
+      mdxSource,
+      frontMatter: data,
+    }
+  } catch (e: any) {
+    console.error(`Error reading or processing post ${slug}:`, e)
+    return null
+  }
+}
 
-Harbour works great with Vercel. To deploy your site, push your code to GitHub and import it into Vercel.
-  `,
-  },
-  "markdown-guide": {
-    title: "Markdown Guide",
-    date: "March 5, 2025",
-    content: `
-# Markdown Guide
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), "posts")
+  const filenames = fs.readdirSync(postsDirectory)
 
-This guide covers the basics of Markdown syntax that you can use in your Harbour content.
+  return filenames.map((filename) => ({
+    slug: filename.replace(".mdx", ""),
+  }))
+}
 
-## Basic Syntax
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const post = await getPostContent(slug)
 
-### Headings
+  if (!post) {
+    notFound()
+  }
 
-\`\`\`
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-\`\`\`
+  const { mdxSource, frontMatter } = post
 
-### Emphasis
+  return (
+    <div className="container mx-auto py-8">
+      <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
+      <div className="prose">
+        <MDXRemote {...mdxSource} components={components} />
+      </div>
+    </div>
+  )
+}
 
-\`\`\`
-*Italic text*
-_Also italic text_
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const post = await getPostContent(slug)
 
-**Bold text**
-__Also bold text__
+  if (!post) {
+    return {
+      title: "Not Found",
+    }
+  }
 
-***Bold and italic text***
-\`\`\`
+  return {
+    title: post.frontMatter.title,
+    description: post.frontMatter.description,
+  }
+}
 
-### Lists
-
-\`\`\`
-- Unordered item 1
-- Unordered item 2
-- Nested item
-- Another nested item
-- Unordered item 3
-
-1. Ordered item 1
-2. Ordered item 2
-3. Ordered item 3
-\`\`\`
-
-### Link
