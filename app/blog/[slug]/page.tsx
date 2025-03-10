@@ -66,4 +66,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
 // Ensure generateMetadata returns a Promise of the correct type
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
   const post = getPostContent(await params)
- 
+  
+  if (!post) {
+    return {
+      title: "Not Found"
+    }
+  }
+  
+  return {
+    title: post.frontMatter.title,
+    description: post.frontMatter.description || `Blog post about ${params.slug}`
+  }
+} // <-- Check this closing brace
