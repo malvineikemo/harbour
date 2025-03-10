@@ -1,10 +1,9 @@
-import { GetServerSideProps } from "next"
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
-import fs from "fs"
-import path from "path"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import fs from 'fs'
+import path from 'path'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 import { ChevronLeft } from 'lucide-react'
 
 interface BlogPostParams {
@@ -16,31 +15,11 @@ interface BlogPostProps {
   post: any // Adjust this type as needed for the post data
 }
 
-// This function will fetch the post data on the server side for each request
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { slug } = context.params as { slug: string }
+// This is now a Server Component where you can use async functions
+const BlogPost = async ({ params }: BlogPostProps) => {
+  // Fetching post data on the server side directly in the component
+  const post = await getPostContent(params.slug)
 
-  try {
-    const post = getPostContent(slug)
-
-    if (!post) {
-      return { notFound: true }
-    }
-
-    return {
-      props: {
-        post,
-        params: { slug },
-      },
-    }
-  } catch (error) {
-    console.error("Error fetching post:", error)
-    return { notFound: true }
-  }
-}
-
-// BlogPost component accepts post data and params as props
-const BlogPost = ({ params, post }: BlogPostProps) => {
   if (!post) {
     notFound()
   }
@@ -72,11 +51,11 @@ const BlogPost = ({ params, post }: BlogPostProps) => {
 
 // Ensure generateMetadata returns a Promise of the correct type
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
-  const post = getPostContent(params.slug)
+  const post = await getPostContent(params.slug)
 
   if (!post) {
     return {
-      title: "Not Found"
+      title: 'Not Found'
     }
   }
 
