@@ -6,8 +6,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft } from 'lucide-react'
 
+interface BlogPostParams {
+  slug: string
+}
+
 interface BlogPostProps {
-  params: { slug: string } // Directly assign the params without Promise
+  params: BlogPostParams
 }
 
 // This function should return static params
