@@ -9,12 +9,8 @@ interface BlogPostParams {
   slug: string
 }
 
-interface BlogPostProps {
-  params: BlogPostParams
-}
-
 // This is the actual server-side component
-const BlogPost = async ({ params }: BlogPostProps) => {
+const BlogPost = async ({ params }: { params: BlogPostParams }) => {
   const post = await getPostContent(params.slug)
 
   if (!post) {
@@ -47,7 +43,7 @@ const BlogPost = async ({ params }: BlogPostProps) => {
 }
 
 // Ensure generateMetadata is correct and returns a Promise<Metadata>
-export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: BlogPostParams }): Promise<Metadata> {
   const post = await getPostContent(params.slug)
 
   if (!post) {
