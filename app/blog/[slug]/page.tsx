@@ -42,8 +42,12 @@ const BlogPost = async ({ params }: { params: BlogPostParams }) => {
   )
 }
 
-// Ensure generateMetadata is correct and returns a Promise<Metadata>
-export async function generateMetadata({ params }: { params: BlogPostParams }): Promise<Metadata> {
+// Correctly handle metadata generation as per the docs
+export async function generateMetadata({
+  params
+}: {
+  params: BlogPostParams
+}): Promise<Metadata> {
   const post = await getPostContent(params.slug)
 
   if (!post) {
@@ -54,7 +58,7 @@ export async function generateMetadata({ params }: { params: BlogPostParams }): 
 
   return {
     title: post.frontMatter.title,
-    description: post.frontMatter.description || `Blog post about ${params.slug}`
+    description: post.frontMatter.description || `Blog post about ${params.slug}`,
   }
 }
 
