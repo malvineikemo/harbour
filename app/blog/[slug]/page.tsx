@@ -1,4 +1,4 @@
-import { Metadata } from "next" // Ensure you're importing the correct type for Metadata
+import { Metadata } from "next" // Import Metadata type
 import { notFound } from "next/navigation"
 import fs from "fs"
 import path from "path"
@@ -8,9 +8,8 @@ import { ChevronLeft } from 'lucide-react'
 
 // Your existing getPostContent function...
 
-// Define the type for the props correctly
 interface BlogPostProps {
-  params: { slug: string }
+  params: { slug: string } | Promise<{ slug: string }>
 }
 
 // Ensure generateStaticParams returns a Promise of the correct type
@@ -31,8 +30,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 // BlogPost component with correct async params typing
-export default function BlogPost({ params }: BlogPostProps) {
-  const post = getPostContent(params.slug)
+export default async function BlogPost({ params }: BlogPostProps) {
+  // Make sure the `params` is awaited if it's a promise
+  const post = getPostContent(await params)
   
   if (!post) {
     notFound()
@@ -65,16 +65,5 @@ export default function BlogPost({ params }: BlogPostProps) {
 
 // Ensure generateMetadata returns a Promise of the correct type
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
-  const post = getPostContent(params.slug)
-  
-  if (!post) {
-    return {
-      title: "Not Found"
-    }
-  }
-  
-  return {
-    title: post.frontMatter.title,
-    description: post.frontMatter.description || `Blog post about ${params.slug}`
-  }
-}
+  const post = getPostContent(await params)
+ 
