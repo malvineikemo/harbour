@@ -7,7 +7,6 @@ import rehypeHighlight from "rehype-highlight"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { notFound } from "next/navigation"
-import { PageProps } from "next" // ✅ Import Next.js PageProps
 
 const components = {}
 
@@ -49,8 +48,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// ✅ Use PageProps<{ slug: string }> for correct typing
-export default async function BlogPost({ params }: PageProps<{ slug: string }>) {
+// ✅ Manually define props type instead of using PageProps
+interface BlogPostProps {
+  params: { slug: string }
+}
+
+export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params
   const post = await getPostContent(slug)
 
