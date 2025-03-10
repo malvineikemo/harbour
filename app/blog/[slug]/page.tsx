@@ -48,12 +48,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// ✅ Manually define props type instead of using PageProps
+// 🔥 FIX: Ensure params are properly awaited
 interface BlogPostProps {
   params: { slug: string }
 }
 
-export default async function BlogPost({ params }: BlogPostProps) {
+export default async function BlogPost({ params }: Awaited<BlogPostProps>) {
   const { slug } = params
   const post = await getPostContent(slug)
 
@@ -73,7 +73,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
   )
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: Awaited<{ params: { slug: string } }>) {
   const { slug } = params
   const post = await getPostContent(slug)
 
