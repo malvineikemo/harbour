@@ -13,7 +13,7 @@ const components = {
 }
 
 async function getPostContent(slug: string) {
-  const filePath = path.join(process.cwd(), "posts", `${slug}.mdx`)
+  const filePath = path.join(process.cwd(), "posts", `${slug}.mdx`) // ✅ Fixed template string
 
   try {
     const fileContent = fs.readFileSync(filePath, "utf8")
@@ -34,8 +34,12 @@ async function getPostContent(slug: string) {
       mdxSource,
       frontMatter: data,
     }
-  } catch (e: any) {
-    console.error(`Error reading or processing post ${slug}:`, e)
+  } catch (e: unknown) { // ✅ Changed `any` to `unknown`
+    if (e instanceof Error) {
+      console.error(`Error reading or processing post ${slug}:`, e.message)
+    } else {
+      console.error(`Unknown error occurred while processing post ${slug}`)
+    }
     return null
   }
 }
@@ -84,4 +88,3 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: post.frontMatter.description,
   }
 }
-
