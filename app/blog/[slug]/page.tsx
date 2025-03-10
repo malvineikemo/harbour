@@ -1,4 +1,3 @@
-import type { PageProps } from "next"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
@@ -10,7 +9,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft } from "lucide-react"
+import { ChevronLeft } from 'lucide-react'
 
 const components = {}
 
@@ -52,8 +51,8 @@ export async function generateStaticParams() {
   }))
 }
 
-// ✅ Fix: Extend `PageProps` correctly
-interface BlogPostProps extends PageProps {
+// Fix: Remove the PageProps extension which is causing the type error
+interface BlogPostProps {
   params: { slug: string }
 }
 
@@ -78,7 +77,9 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
-        {frontMatter.date && <p className="text-gray-500 dark:text-gray-400">{frontMatter.date}</p>}
+        {frontMatter.date && (
+          <p className="text-gray-500 dark:text-gray-400">{frontMatter.date}</p>
+        )}
       </div>
 
       <div className="prose prose-blue max-w-none dark:prose-invert">
@@ -103,4 +104,3 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: post.frontMatter.description,
   }
 }
-
