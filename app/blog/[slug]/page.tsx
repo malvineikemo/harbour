@@ -24,9 +24,8 @@ interface BlogPostProps {
   post: Post
 }
 
-// This is now a Server Component where you can use async functions
+// This is a server component
 const BlogPost = async ({ params }: BlogPostProps) => {
-  // Fetching post data on the server side directly in the component
   const post = await getPostContent(params.slug)
 
   if (!post) {
@@ -43,14 +42,14 @@ const BlogPost = async ({ params }: BlogPostProps) => {
           Back to Blog
         </Link>
       </Button>
-      
+
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
         {frontMatter.date && (
           <p className="text-gray-500 dark:text-gray-400">{frontMatter.date}</p>
         )}
       </div>
-      
+
       <div className="prose prose-blue max-w-none dark:prose-invert">
         <div dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }} />
       </div>
