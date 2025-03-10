@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import fs from "fs"
@@ -12,29 +13,34 @@ interface BlogPostParams {
 
 interface BlogPostProps {
   params: BlogPostParams
+  post: any // Adjust this type as needed for the post data
 }
 
-// This function should return static params
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
+// This function will fetch the post data on the server side for each request
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { slug } = context.params as { slug: string }
+
   try {
-    const postsDirectory = path.join(process.cwd(), "posts")
-    const filenames = fs.readdirSync(postsDirectory)
-    
-    return filenames
-      .filter(filename => filename.endsWith('.md'))
-      .map(filename => ({
-        slug: filename.replace(/\.md$/, '')
-      }))
+    const post = getPostContent(slug)
+
+    if (!post) {
+      return { notFound: true }
+    }
+
+    return {
+      props: {
+        post,
+        params: { slug },
+      },
+    }
   } catch (error) {
-    console.error("Error generating static params:", error)
-    return []
+    console.error("Error fetching post:", error)
+    return { notFound: true }
   }
 }
 
-// BlogPost component should receive params directly as an object
-export default async function BlogPost({ params }: BlogPostProps) {
-  const post = getPostContent(params.slug) // Ensure `slug` is passed correctly
-
+// BlogPost component accepts post data and params as props
+const BlogPost = ({ params, post }: BlogPostProps) => {
   if (!post) {
     notFound()
   }
@@ -67,15 +73,17 @@ export default async function BlogPost({ params }: BlogPostProps) {
 // Ensure generateMetadata returns a Promise of the correct type
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
   const post = getPostContent(params.slug)
-  
+
   if (!post) {
     return {
       title: "Not Found"
     }
   }
-  
+
   return {
     title: post.frontMatter.title,
     description: post.frontMatter.description || `Blog post about ${params.slug}`
   }
 }
+
+export default BlogPost
