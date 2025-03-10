@@ -59,7 +59,7 @@ export default function IW6xPage() {
             <strong>Console Unlocker</strong> - Access to developer console for advanced configuration
           </li>
           <li>
-            <strong>Direct Connect</strong> - Connect directly to friends' games
+            <strong>Direct Connect</strong> - Connect directly to friends&apos; games
           </li>
           <li>
             <strong>Controller Support</strong> - Improved controller support and customization
@@ -212,7 +212,7 @@ export default function IW6xPage() {
               </CardContent>
               <CardFooter>
                 <p className="text-sm text-gray-400">
-                  You'll need a BitTorrent client like{" "}
+                  You&apos;ll need a BitTorrent client like{" "}
                   <a
                     href="https://www.qbittorrent.org/"
                     target="_blank"

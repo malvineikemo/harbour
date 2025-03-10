@@ -212,7 +212,7 @@ export default function S1xPage() {
               </CardContent>
               <CardFooter>
                 <p className="text-sm text-gray-400">
-                  You'll need a BitTorrent client like{" "}
+                  You&apos;ll need a BitTorrent client like{" "}
                   <a
                     href="https://www.qbittorrent.org/"
                     target="_blank"
