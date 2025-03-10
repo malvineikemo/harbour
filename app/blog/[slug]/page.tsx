@@ -1,3 +1,4 @@
+import { PageProps } from "next"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
@@ -48,12 +49,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// 🔥 FIX: Ensure params are properly awaited
-interface BlogPostProps {
+// ✅ Fix: Extend `PageProps` correctly
+interface BlogPostProps extends PageProps {
   params: { slug: string }
 }
 
-export default async function BlogPost({ params }: Awaited<BlogPostProps>) {
+export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params
   const post = await getPostContent(slug)
 
@@ -65,24 +66,4 @@ export default async function BlogPost({ params }: Awaited<BlogPostProps>) {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
-      <div className="prose">
-        <MDXRemote {...mdxSource} components={components} />
-      </div>
-    </div>
-  )
-}
-
-export async function generateMetadata({ params }: Awaited<{ params: { slug: string } }>) {
-  const { slug } = params
-  const post = await getPostContent(slug)
-
-  if (!post) {
-    return { title: "Not Found" }
-  }
-
-  return {
-    title: post.frontMatter.title,
-    description: post.frontMatter.description,
-  }
-}
+   
