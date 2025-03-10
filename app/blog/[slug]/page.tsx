@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import fs from 'fs'
-import path from 'path'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft } from 'lucide-react'
@@ -10,9 +8,20 @@ interface BlogPostParams {
   slug: string
 }
 
+interface FrontMatter {
+  title: string
+  date?: string
+  description?: string
+}
+
+interface Post {
+  frontMatter: FrontMatter
+  content: string
+}
+
 interface BlogPostProps {
   params: BlogPostParams
-  post: any // Adjust this type as needed for the post data
+  post: Post
 }
 
 // This is now a Server Component where you can use async functions
