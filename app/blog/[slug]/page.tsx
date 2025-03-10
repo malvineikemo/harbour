@@ -1,4 +1,4 @@
-import { Metadata } from "next"  // Ensure you're importing Metadata type from Next.js
+import { Metadata } from "next" // Ensure you're importing the correct type for Metadata
 import { notFound } from "next/navigation"
 import fs from "fs"
 import path from "path"
@@ -8,7 +8,13 @@ import { ChevronLeft } from 'lucide-react'
 
 // Your existing getPostContent function...
 
-export async function generateStaticParams() {
+// Define the type for the props correctly
+interface BlogPostProps {
+  params: { slug: string }
+}
+
+// Ensure generateStaticParams returns a Promise of the correct type
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   try {
     const postsDirectory = path.join(process.cwd(), "posts")
     const filenames = fs.readdirSync(postsDirectory)
@@ -24,13 +30,7 @@ export async function generateStaticParams() {
   }
 }
 
-// Modify this to align with the expected return type in Next.js 13+
-// Adding type for props
-
-interface BlogPostProps {
-  params: { slug: string }
-}
-
+// BlogPost component with correct async params typing
 export default function BlogPost({ params }: BlogPostProps) {
   const post = getPostContent(params.slug)
   
@@ -63,8 +63,8 @@ export default function BlogPost({ params }: BlogPostProps) {
   )
 }
 
-// Update the return type for generateMetadata as well
-export function generateMetadata({ params }: BlogPostProps): Metadata {
+// Ensure generateMetadata returns a Promise of the correct type
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
   const post = getPostContent(params.slug)
   
   if (!post) {
