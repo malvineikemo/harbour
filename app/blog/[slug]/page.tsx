@@ -1,4 +1,4 @@
-import { PageProps } from "next"
+import type { PageProps } from "next"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
@@ -8,6 +8,9 @@ import rehypeHighlight from "rehype-highlight"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { notFound } from "next/navigation"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft } from "lucide-react"
 
 const components = {}
 
@@ -66,4 +69,38 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   return (
     <div className="container mx-auto py-8">
-   
+      <Button variant="ghost" size="sm" className="mb-6" asChild>
+        <Link href="/blog">
+          <ChevronLeft className="mr-2 h-4 w-4" />
+          Back to Blog
+        </Link>
+      </Button>
+
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
+        {frontMatter.date && <p className="text-gray-500 dark:text-gray-400">{frontMatter.date}</p>}
+      </div>
+
+      <div className="prose prose-blue max-w-none dark:prose-invert">
+        <MDXRemote {...mdxSource} components={components} />
+      </div>
+    </div>
+  )
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const post = await getPostContent(slug)
+
+  if (!post) {
+    return {
+      title: "Not Found",
+    }
+  }
+
+  return {
+    title: post.frontMatter.title,
+    description: post.frontMatter.description,
+  }
+}
+
