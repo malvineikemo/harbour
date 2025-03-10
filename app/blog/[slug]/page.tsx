@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft } from 'lucide-react'
 
+// Define the types for props and data
 interface BlogPostParams {
   slug: string
 }
@@ -21,10 +22,9 @@ interface Post {
 
 interface BlogPostProps {
   params: BlogPostParams
-  post: Post
 }
 
-// This is a server component
+// This is the actual server-side component
 const BlogPost = async ({ params }: BlogPostProps) => {
   const post = await getPostContent(params.slug)
 
@@ -57,7 +57,7 @@ const BlogPost = async ({ params }: BlogPostProps) => {
   )
 }
 
-// Ensure generateMetadata returns a Promise of the correct type
+// Ensure generateMetadata is correct and returns a Promise<Metadata>
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
   const post = await getPostContent(params.slug)
 
@@ -73,4 +73,4 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
   }
 }
 
-export default BlogPost
+export default BlogPost // Correct default export
