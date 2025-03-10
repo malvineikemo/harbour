@@ -15,11 +15,6 @@ interface FrontMatter {
   description?: string
 }
 
-interface Post {
-  frontMatter: FrontMatter
-  content: string
-}
-
 interface BlogPostProps {
   params: BlogPostParams
 }
