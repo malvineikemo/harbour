@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft } from 'lucide-react'
 
 interface BlogPostProps {
-  params: { slug: string } // Remove the Promise type here
+  params: { slug: string } // Directly assign the params without Promise
 }
 
-// Ensure generateStaticParams returns a Promise of the correct type
+// This function should return static params
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   try {
     const postsDirectory = path.join(process.cwd(), "posts")
@@ -27,17 +27,16 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }
 }
 
-// BlogPost component with correct async params typing
+// BlogPost component should receive params directly as an object
 export default async function BlogPost({ params }: BlogPostProps) {
-  // Use params directly, no need to await it
-  const post = getPostContent(params)
-  
+  const post = getPostContent(params.slug) // Ensure `slug` is passed correctly
+
   if (!post) {
     notFound()
   }
-  
+
   const { frontMatter, content } = post
-  
+
   return (
     <div className="container mx-auto py-8">
       <Button variant="ghost" size="sm" className="mb-6" asChild>
@@ -63,7 +62,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
 // Ensure generateMetadata returns a Promise of the correct type
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
-  const post = getPostContent(params)
+  const post = getPostContent(params.slug)
   
   if (!post) {
     return {
