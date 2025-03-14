@@ -15,12 +15,12 @@ const navItems = [
 ]
 
 const clientItems = [
-  { name: "IW4x", href: "/clients/iw4x", icon: FileDown },
-  { name: "IW6x", href: "/clients/iw6x", icon: FileDown },
-  { name: "S1x", href: "/clients/s1x", icon: FileDown },
-  { name: "T4M", href: "/clients/t4m", icon: FileDown },
-  { name: "T5M", href: "/clients/t5m", icon: FileDown },
-  { name: "T6M", href: "/clients/t6m", icon: FileDown },
+  { name: "IW4x", href: "/clients/iw4-hp", icon: FileDown },
+  { name: "IW6x", href: "/clients/iw6-hp", icon: FileDown },
+  { name: "S1x", href: "/clients/s1-hp", icon: FileDown },
+  { name: "T4M", href: "/clients/t4-hp", icon: FileDown },
+  { name: "T5M", href: "/clients/t5-hp", icon: FileDown },
+  { name: "T6M", href: "/clients/t6-hp", icon: FileDown },
 ]
 
 export function Navbar() {

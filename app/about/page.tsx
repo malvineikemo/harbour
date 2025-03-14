@@ -30,22 +30,22 @@ export default function AboutPage() {
         <p>We maintain enhanced clients for various Call of Duty titles, including:</p>
         <ul>
           <li>
-            <strong>IW4x</strong> - Modern Warfare 2 (2009)
+            <strong>IW4HP</strong> - Modern Warfare 2 (2009)
           </li>
           <li>
-            <strong>IW6x</strong> - Ghosts (2013)
+            <strong>IW6HP</strong> - Ghosts (2013)
           </li>
           <li>
-            <strong>S1x</strong> - Advanced Warfare (2014)
+            <strong>S1HP</strong> - Advanced Warfare (2014)
           </li>
           <li>
-            <strong>T4M</strong> - World at War (2008)
+            <strong>T4HP</strong> - World at War (2008)
           </li>
           <li>
-            <strong>T5M</strong> - Black Ops (2010)
+            <strong>T5HP</strong> - Black Ops (2010)
           </li>
           <li>
-            <strong>T6M</strong> - Black Ops II (2012)
+            <strong>T6HP</strong> - Black Ops II (2012)
           </li>
         </ul>
 

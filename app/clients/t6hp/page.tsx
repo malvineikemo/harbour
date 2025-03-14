@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Download, Github, ExternalLink, Info } from "lucide-react"
 import Image from "next/image"
 
-export default function T6MPage() {
+export default function T6hpPage() {
   return (
     <div className="container mx-auto max-w-4xl py-12">
       <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">

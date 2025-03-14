@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, Github } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
-export default function T6MGuidePage() {
+export default function T6hpGuidePage() {
   return (
     <div className="container mx-auto max-w-4xl py-12">
       <Button variant="ghost" size="sm" className="mb-6" asChild>

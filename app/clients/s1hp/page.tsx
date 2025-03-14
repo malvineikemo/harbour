@@ -5,13 +5,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Download, Github, FileDown, ExternalLink, Info } from "lucide-react"
 import Image from "next/image"
 
-export default function T5MPage() {
+export default function S1hpPage() {
   return (
     <div className="container mx-auto max-w-4xl py-12">
       <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-4xl font-bold tracking-tighter">T5M Client</h1>
-          <p className="text-xl text-gray-400">Call of Duty: Black Ops (2010)</p>
+          <h1 className="text-4xl font-bold tracking-tighter">S1x Client</h1>
+          <p className="text-xl text-gray-400">Call of Duty: Advanced Warfare (2014)</p>
         </div>
         <div className="flex gap-2">
           <Button asChild>
@@ -21,7 +21,7 @@ export default function T5MPage() {
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/clients/t5m/guide">
+            <Link href="/clients/s1x/guide">
               <Info className="mr-2 h-4 w-4" />
               Installation Guide
             </Link>
@@ -32,7 +32,7 @@ export default function T5MPage() {
       <div className="aspect-video w-full overflow-hidden rounded-lg mb-8">
         <Image
           src="/placeholder.svg?height=400&width=800"
-          alt="T5M screenshot"
+          alt="S1x screenshot"
           width={800}
           height={400}
           className="w-full h-full object-cover"
@@ -40,11 +40,11 @@ export default function T5MPage() {
       </div>
 
       <div className="prose prose-invert max-w-none mb-12">
-        <h2>About T5M</h2>
+        <h2>About S1x</h2>
         <p>
-          T5M is an enhanced client for Call of Duty: Black Ops, offering dedicated server support, custom content
-          capabilities, and various quality-of-life improvements. Our client is currently in alpha stage but already
-          provides significant enhancements over the original game.
+          S1x is an enhanced client for Call of Duty: Advanced Warfare, offering dedicated server support, improved
+          networking, and various quality-of-life improvements. Our client allows you to play on community-hosted
+          servers with enhanced stability and performance.
         </p>
 
         <h3>Key Features</h3>
@@ -56,13 +56,16 @@ export default function T5MPage() {
             <strong>Server Browser</strong> - Find and filter available servers
           </li>
           <li>
-            <strong>Custom Content Support</strong> - Play and create custom maps and mods
+            <strong>Improved Networking</strong> - Better connection stability and reduced lag
+          </li>
+          <li>
+            <strong>FOV Slider</strong> - Adjust your field of view for better visibility
           </li>
           <li>
             <strong>Console Commands</strong> - Access to developer console for advanced configuration
           </li>
           <li>
-            <strong>Modern OS Compatibility</strong> - Better compatibility with Windows 10/11
+            <strong>Custom Game Support</strong> - Enhanced options for custom games
           </li>
           <li>
             <strong>Performance Improvements</strong> - Better optimization for modern systems
@@ -70,52 +73,41 @@ export default function T5MPage() {
           <li>
             <strong>Widescreen Support</strong> - Better support for widescreen and ultrawide monitors
           </li>
-          <li>
-            <strong>Enhanced Security</strong> - Basic protection against common exploits
-          </li>
         </ul>
 
         <h3>System Requirements</h3>
         <ul>
           <li>
-            <strong>OS:</strong> Windows 7/8/10/11
+            <strong>OS:</strong> Windows 7/8/10/11 (64-bit required)
           </li>
           <li>
-            <strong>CPU:</strong> Intel Core 2 Duo E6600 or AMD Phenom X3 8750
+            <strong>CPU:</strong> Intel Core i3-530 or AMD Phenom II X4 810
           </li>
           <li>
-            <strong>RAM:</strong> 4GB
+            <strong>RAM:</strong> 6GB
           </li>
           <li>
-            <strong>GPU:</strong> NVIDIA GeForce 8800GT or ATI Radeon HD 3870
+            <strong>GPU:</strong> NVIDIA GeForce GTX 660 or AMD Radeon HD 7850
           </li>
           <li>
-            <strong>Storage:</strong> 12GB available space
+            <strong>Storage:</strong> 55GB available space
           </li>
           <li>
-            <strong>Internet:</strong> Broadband connection for multiplayer
+            <strong>Internet:</strong> Broadband connection
           </li>
         </ul>
 
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-          <p className="text-yellow-300 font-semibold">Alpha Status Notice:</p>
-          <p>
-            T5M is currently in alpha stage. While it&apos;s functional, you may encounter bugs or incomplete features.
-            We&apos;re actively working on improvements and welcome your feedback.
-          </p>
-        </div>
-
-        <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 mt-4">
           <p className="text-yellow-300 font-semibold">Important Note:</p>
           <p>
-            T5M requires a legitimate copy of Call of Duty: Black Ops. Our client does not include the base game files,
-            which must be obtained separately through legal means such as Steam or a physical copy.
+            S1x requires a legitimate copy of Call of Duty: Advanced Warfare. Our client does not include the base game
+            files, which must be obtained separately through legal means such as Steam or a physical copy.
           </p>
         </div>
       </div>
 
       <div id="download" className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Download T5M</h2>
+        <h2 className="text-2xl font-bold mb-6">Download S1x</h2>
 
         <Tabs defaultValue="full">
           <TabsList className="mb-4">
@@ -127,7 +119,7 @@ export default function T5MPage() {
           <TabsContent value="full">
             <Card className="bg-gray-900 border-gray-800">
               <CardHeader>
-                <CardTitle>T5M Full Client</CardTitle>
+                <CardTitle>S1x Full Client</CardTitle>
                 <CardDescription>
                   Complete package including the client and all necessary files (does not include base game)
                 </CardDescription>
@@ -135,11 +127,11 @@ export default function T5MPage() {
               <CardContent>
                 <div className="flex items-center justify-between py-2 border-b border-gray-800">
                   <div>
-                    <p className="font-medium">T5M-Full-Alpha.zip</p>
-                    <p className="text-sm text-gray-400">Alpha Version | 200MB</p>
+                    <p className="font-medium">S1x-Full.zip</p>
+                    <p className="text-sm text-gray-400">Latest Version | 400MB</p>
                   </div>
                   <Button asChild>
-                    <a href="https://github.com/harbourproductions/t5m/releases/latest/download/T5M-Full-Alpha.zip">
+                    <a href="https://github.com/harbourproductions/s1x/releases/latest/download/S1x-Full.zip">
                       <Download className="mr-2 h-4 w-4" />
                       Download
                     </a>
@@ -150,7 +142,7 @@ export default function T5MPage() {
                 <p className="text-sm text-gray-400">Includes client and required files</p>
                 <Button variant="ghost" size="sm" asChild>
                   <a
-                    href="https://github.com/harbourproductions/t5m/releases"
+                    href="https://github.com/harbourproductions/s1x/releases"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -165,17 +157,17 @@ export default function T5MPage() {
           <TabsContent value="update">
             <Card className="bg-gray-900 border-gray-800">
               <CardHeader>
-                <CardTitle>T5M Update Only</CardTitle>
+                <CardTitle>S1x Update Only</CardTitle>
                 <CardDescription>Update files only for existing installations</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between py-2 border-b border-gray-800">
                   <div>
-                    <p className="font-medium">T5M-Update-Alpha.zip</p>
-                    <p className="text-sm text-gray-400">Alpha Version | 40MB</p>
+                    <p className="font-medium">S1x-Update.zip</p>
+                    <p className="text-sm text-gray-400">Latest Version | 80MB</p>
                   </div>
                   <Button asChild>
-                    <a href="https://github.com/harbourproductions/t5m/releases/latest/download/T5M-Update-Alpha.zip">
+                    <a href="https://github.com/harbourproductions/s1x/releases/latest/download/S1x-Update.zip">
                       <Download className="mr-2 h-4 w-4" />
                       Download
                     </a>
@@ -186,7 +178,7 @@ export default function T5MPage() {
                 <p className="text-sm text-gray-400">Only includes updated client files</p>
                 <Button variant="ghost" size="sm" asChild>
                   <a
-                    href="https://github.com/harbourproductions/t5m/releases"
+                    href="https://github.com/harbourproductions/s1x/releases"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -201,17 +193,17 @@ export default function T5MPage() {
           <TabsContent value="torrent">
             <Card className="bg-gray-900 border-gray-800">
               <CardHeader>
-                <CardTitle>T5M Torrent Downloads</CardTitle>
+                <CardTitle>S1x Torrent Downloads</CardTitle>
                 <CardDescription>Torrent files for peer-to-peer downloading</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between py-2 border-b border-gray-800">
                   <div>
-                    <p className="font-medium">T5M-Full-Alpha.torrent</p>
-                    <p className="text-sm text-gray-400">Alpha Version | 200MB</p>
+                    <p className="font-medium">S1x-Full.torrent</p>
+                    <p className="text-sm text-gray-400">Latest Version | 400MB</p>
                   </div>
                   <Button asChild>
-                    <a href="https://github.com/harbourproductions/t5m/releases/latest/download/T5M-Full-Alpha.torrent">
+                    <a href="https://github.com/harbourproductions/s1x/releases/latest/download/S1x-Full.torrent">
                       <FileDown className="mr-2 h-4 w-4" />
                       Download Torrent
                     </a>
@@ -239,13 +231,13 @@ export default function T5MPage() {
 
       <div className="flex flex-col md:flex-row gap-6 mb-12">
         <Button asChild size="lg" className="md:flex-1">
-          <Link href="/clients/t5m/guide">
+          <Link href="/clients/s1x/guide">
             <Info className="mr-2 h-5 w-5" />
             Installation Guide
           </Link>
         </Button>
         <Button asChild variant="outline" size="lg" className="md:flex-1">
-          <a href="https://github.com/harbourproductions/t5m" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/harbourproductions/s1x" target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-5 w-5" />
             Source Code
           </a>
@@ -259,25 +251,25 @@ export default function T5MPage() {
       </div>
 
       <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-        <h3 className="text-xl font-bold mb-4">Alpha Development Progress</h3>
+        <h3 className="text-xl font-bold mb-4">Latest Changes</h3>
         <ul className="space-y-2 text-gray-300">
-          <li>• Basic dedicated server functionality implemented</li>
-          <li>• Server browser partially working</li>
-          <li>• Custom map loading support added</li>
-          <li>• Console commands enabled</li>
-          <li>• Windows 10/11 compatibility improvements</li>
-          <li>• Widescreen resolution support</li>
-          <li>• Basic mod support implemented</li>
-          <li>• Working on improved networking and stability</li>
+          <li>• Improved server browser performance</li>
+          <li>• Added FOV slider in options menu</li>
+          <li>• Fixed crash when using exo abilities</li>
+          <li>• Enhanced dedicated server stability</li>
+          <li>• Improved compatibility with Windows 11</li>
+          <li>• Fixed memory leaks in multiplayer</li>
+          <li>• Added support for ultrawide resolutions</li>
+          <li>• Various bug fixes and performance improvements</li>
         </ul>
         <div className="mt-4">
           <Button variant="ghost" size="sm" asChild>
             <a
-              href="https://github.com/harbourproductions/t5m/blob/main/CHANGELOG.md"
+              href="https://github.com/harbourproductions/s1x/blob/main/CHANGELOG.md"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Development Log
+              View Full Changelog
             </a>
           </Button>
         </div>

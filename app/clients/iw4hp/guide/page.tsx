@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Download, Github, FileDown, ExternalLink, Info } from "lucide-react"
 import Image from "next/image"
 
-export default function IW4xPage() {
+export default function IW4hpPage() {
   return (
     <div className="container mx-auto max-w-4xl py-12">
       <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
